@@ -1,0 +1,30 @@
+<section class="politicas-privacidad">
+  <div class="wrapper">
+    <mat-drawer-container>
+      <mat-drawer #drawer mode='over' position="start">
+        <app-left-sidebar (cerrar)="drawer.toggle()"></app-left-sidebar>
+      </mat-drawer>
+      <app-header-app (drawer)="drawer.toggle()"></app-header-app>
+      <!-- Sección del body donde se muestra todo el contenido -->
+      <div class="body-home">
+        <!-- Sección del eslogan y contenido -->
+        <div class="section-eslogan">
+          <div class="eslogan {{isMobile()}}">
+              <div class="line-color">
+                  <div class="vertical-line" style="height: 111px;"></div>
+              </div>
+              <div class="title-link">
+                  <span>Política de privacidad</span>
+              </div>
+          </div>
+          <div class="sect-lorem">
+            <span class="text-lorem">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis dolore excepturi veritatis ipsam. Aliquam sapiente, animi hic recusandae inventore ab reiciendis, modi sit nesciunt aliquid dolores magnam aspernatur provident. Odit quos numquam officiis aspernatur, quibusdam nulla necessitatibus impedit veritatis porro adipisci asperiores delectus doloribus in assumenda et. Quibusdam laboriosam, debitis ea deleniti alias, reprehenderit dolore mollitia facilis nesciunt quam quo itaque. In perspiciatis ab eligendi laborum accusantium provident! Cumque mollitia commodi quas dicta non debitis sed similique odio ipsam sapiente nesciunt necessitatibus vel facilis ratione voluptates, atque recusandae itaque eos accusamus! Neque esse exercitationem nulla accusamus. Possimus corporis eius necessitatibus expedita harum. Aut consequatur eum architecto sapiente. Dolorem, sit illo dolorum commodi corrupti eaque amet quasi assumenda explicabo veritatis, cum ullam architecto minima facilis exercitationem porro ab autem rem? Et explicabo excepturi dicta ut saepe. Harum obcaecati incidunt, nisi nihil, recusandae tempora sint, inventore nostrum ad voluptate corporis consequatur tenetur soluta omnis repellat est velit quo quos illum. Aliquid fugit esse vitae consectetur aspernatur doloremque explicabo qui nobis consequatur architecto autem incidunt inventore minima ratione atque maiores cupiditate repellendus, consequuntur pariatur tempora corporis sunt quisquam! Sunt alias id totam vero iusto quam qui saepe asperiores ipsa delectus perferendis eos maiores mollitia quos et, nulla repellendus animi excepturi rem voluptatibus soluta! Quia non facilis corrupti officiis harum provident beatae culpa voluptate perspiciatis in. Quos temporibus quis quibusdam consequuntur voluptatum officia provident consequatur blanditiis perspiciatis dolorum qui illum, culpa nostrum minus necessitatibus et ad inventore consectetur iusto. Quisquam iure vero provident fugit doloremque laborum, maxime tenetur in, velit iste incidunt facere rerum ullam perspiciatis magni, perferendis nam veritatis! Exercitationem doloribus doloremque unde animi consequuntur nulla explicabo dignissimos id similique voluptates, perferendis praesentium iusto. Fugiat esse numquam, libero quis magni id, laudantium aspernatur consectetur voluptate ea laboriosam explicabo. Mollitia recusandae, corrupti nemo inventore consectetur deserunt distinctio, laborum cum doloribus perspiciatis, adipisci repellat quaerat labore totam exercitationem hic nisi ipsam ratione? Sed consectetur dolor omnis placeat suscipit quam libero eos laudantium consequatur, ad quidem, culpa aspernatur porro enim veniam debitis laborum tempora laboriosam quae ab sunt tenetur? Praesentium, voluptates modi architecto deleniti error dolorem officia aut quod laborum possimus? Totam quod sapiente fugiat atque repudiandae repellendus delectus eius aliquid minus consectetur dicta soluta molestias quia dignissimos, deserunt fugit obcaecati ex, corporis maxime recusandae ab dolorum similique accusamus! Voluptatem, accusantium, perspiciatis nam eligendi iure vitae temporibus nostrum exercitationem quasi animi explicabo corporis perferendis harum laborum sapiente maiores necessitatibus quae nesciunt porro odio numquam molestiae consequuntur enim inventore. Ea quam similique laboriosam vitae aspernatur? Molestiae tempore neque, rem similique deserunt ullam. Ipsam illum molestias vitae ad, delectus minus voluptates nesciunt aperiam quidem vel corrupti quibusdam voluptatibus fugiat repellat eos optio nostrum reprehenderit? Rem distinctio magnam ullam vero, id aperiam molestiae a reprehenderit beatae perferendis eveniet placeat qui ratione illo quis repellendus magni veritatis voluptatibus minus provident voluptas maxime odit dicta ut! Repudiandae, dolores consequuntur. Asperiores, tempore optio dicta doloremque saepe voluptates perspiciatis similique perferendis nostrum, omnis mollitia quisquam quia, pariatur nobis itaque fugit vero sed. Quos?</span>
+          </div>
+        </div>
+        <div class="footer">
+          <app-footer-app></app-footer-app>
+        </div>
+      </div>
+    </mat-drawer-container>
+  </div>
+</section>
