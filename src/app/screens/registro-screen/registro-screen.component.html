@@ -12,13 +12,13 @@
           <!-- Campos del formulario -->
           <mat-form-field class="inputs-login" appearance="outline">
             <mat-label>Nombre</mat-label>
-            <input matInput [(ngModel)]="user.first_name" placeholder="Ingresa nombre" (keypress)="soloLetras($event)">
+            <input [(ngModel)]="user.first_name" type="text" matInput placeholder="Ingresa nombre">
           </mat-form-field>
           <div *ngIf="errors.first_name" class="invalid-feedback">{{ errors.first_name }}</div>
 
           <mat-form-field class="inputs-login" appearance="outline">
             <mat-label>Apellidos</mat-label>
-            <input matInput [(ngModel)]="user.last_name" type="text"  placeholder="Ingresa apellido" (keypress)="soloLetras($event)">
+            <input [(ngModel)]="user.last_name" type="text" matInput placeholder="Ingresa apellido">
           </mat-form-field>
           <div *ngIf="errors.last_name" class="invalid-feedback">{{ errors.last_name }}</div>
 
