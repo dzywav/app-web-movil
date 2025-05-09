@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FacadeService } from 'src/app/services/facade.service';
 import { UsuariosService } from 'src/app/services/usuarios.service';
 declare var $:any;
 
@@ -13,6 +14,7 @@ export class RegistroScreenComponent implements OnInit{
   //Variables
   public user:any = {};
   public errors:any = {};
+  public isLoading:boolean = false;
 
   //Para contraseña
   public hide_1: boolean = false;
@@ -24,6 +26,7 @@ export class RegistroScreenComponent implements OnInit{
 
   constructor(
     private usuariosService: UsuariosService,
+    private facadeService:FacadeService,
     private router: Router
   ){}
 
@@ -53,11 +56,38 @@ export class RegistroScreenComponent implements OnInit{
     if(!$.isEmptyObject(this.errors)){
       return false;
     }
-    //TODO:Aquí va la lógica para registrar usuario.
+    //Aquí vamos a registrar
+    if(this.user.terminos_condiciones){
+      this.isLoading = true;
+      this.facadeService.registrarUser(this.user).subscribe(
+        (response)=>{
+          alert("Usuario registrado correctamente")
+          //this.loginUser(this.user.email, this.user.password);
+        }, (error)=>{
+          alert("No se pudo iniciar sesión");
+          this.isLoading = false;
+        }
+      );
+    }else{
+      alert("Por favor acepta los términos y condiciones");
+    }
+  }
+
+  public loginUser(username: string, password: string){
+    this.facadeService.login(username, password).subscribe(
+      (response)=>{
+        this.facadeService.saveUserData(response);
+        this.router.navigate(["home"]);
+        this.isLoading = false;
+      }, (error)=>{
+        alert("No se pudo iniciar sesión");
+        this.isLoading = false;
+      }
+    );
   }
 
   public goLogin(){
-    this.router.navigate(['/']);
+    this.router.navigate([""]);
   }
 
   showPassword()
@@ -77,19 +107,6 @@ export class RegistroScreenComponent implements OnInit{
       return true;
     }else{
       return false;
-    }
-  }
-
-  public soloLetras(event: KeyboardEvent) {
-    const charCode = event.key.charCodeAt(0);
-    alert("letra presionada")
-    // Permitir solo letras (mayúsculas y minúsculas) y espacio
-    if (
-      !(charCode >= 65 && charCode <= 90) &&  // Letras mayúsculas
-      !(charCode >= 97 && charCode <= 122) && // Letras minúsculas
-      charCode !== 32                         // Espacio
-    ) {
-      event.preventDefault();
     }
   }
 }
